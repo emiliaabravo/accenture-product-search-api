@@ -1,3 +1,67 @@
+## 💻 My Work
+
+This project was completed as part of the **Accenture North America Software Engineering Virtual Experience** on Forage.
+
+### 🎯 Objective
+The goal was to complete the backend logic for the existing API endpoint:
+
+
+The route and controller were already scaffolded, but the method body was left incomplete with a `TODO`.
+
+---
+
+### ✅ What I Implemented
+
+I implemented the full logic inside the `SearchController.java` file to handle product searches based on a query string. My implementation supports:
+
+- 🔍 **Case-insensitive partial search**  
+  - Example: `query=choco` → matches names/descriptions like `"Chocolate Cake"`, `"milk chocolate bar"`  
+  - Used `.toLowerCase().contains(...)`
+
+- 🔐 **Exact match when query is in quotes**  
+  - Example: `query="Chocolate Cake"` → only matches if the name or description is exactly `"Chocolate Cake"`  
+  - Used `.equals(...)` for case-sensitive match (as per test expectation)
+
+- 🛡️ **Null safety**  
+  - Handled `null` names or descriptions to avoid `NullPointerException`  
+  - Used safe checks like `name != null ? name.toLowerCase() : ""`
+
+- 🧪 **Test-Driven Development (TDD)**  
+  - I analyzed the failing Spock test specs
+  - Designed logic to pass all 7 failing tests in `SearchControllerSpec.groovy`
+  - Re-ran tests until full pass (✅)
+
+---
+
+### 📁 Files I worked in:
+- `src/main/java/com/mockcompany/webapp/controller/SearchController.java`
+- Verified functionality through: `src/test/groovy/com/mockcompany/webapp/controller/SearchControllerSpec.groovy`
+
+---
+
+### 📚 What I Learned:
+- Implementing backend search logic using Java & Spring Boot
+- How REST controllers work in Spring (`@RestController`, `@GetMapping`, `@RequestParam`)
+- The difference between `.contains()`, `.equals()`, and `.equalsIgnoreCase()`
+- How to safely handle user input and avoid common Java null issues
+- Working with a real test suite (Spock/Groovy) and reading test-driven specs
+
+---
+
+### 🚀 Technologies used:
+- Java 8
+- Spring Boot
+- JPA
+- Gradle
+- Groovy + Spock for unit testing
+
+---
+
+👩‍💻 Author: [Emilia Bravo](mailto:emiliabravo19@gmail.com)  
+
+
+
+
 # Mock Company E-Commerce Application
 
 This is the e-commerce application for Mock Company.  It's built using the following languages/frameworks
